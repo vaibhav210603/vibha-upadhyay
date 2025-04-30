@@ -29,6 +29,11 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// Root route handler
+app.get('/', (req, res) => {
+  res.json({ message: 'Appointment server is running' });
+});
+
 // API endpoint for sending meeting links
 app.post('/api/send-meeting-link', async (req, res) => {
   console.log('Received request body:', req.body);
@@ -99,6 +104,17 @@ app.post('/api/send-meeting-link', async (req, res) => {
     console.error('Error stack:', error.stack);
     res.status(500).json({ error: 'Failed to send meeting link', details: error.message });
   }
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Something went wrong!' });
+});
+
+// 404 handler
+app.use((req, res) => {
+  res.status(404).json({ error: 'Route not found' });
 });
 
 app.listen(port, () => {
