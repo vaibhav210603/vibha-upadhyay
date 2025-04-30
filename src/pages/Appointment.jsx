@@ -77,7 +77,7 @@ const Appointment = () => {
       });
 
       const apiUrl = process.env.NODE_ENV === 'production' 
-        ? '/api/send-meeting-link'
+        ? 'https://your-server-url.vercel.app/api/send-meeting-link'
         : 'http://localhost:3001/api/send-meeting-link';
 
       const response = await fetch(apiUrl, {
