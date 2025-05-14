@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Link as RouterLink } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import Comments from '../components/Comments';
 
 const Home = () => {
   const { user } = useAuth();
@@ -294,6 +295,22 @@ const Home = () => {
               </Grid>
             ))}
           </Grid>
+        </Container>
+      </Box>
+
+      {/* Comments Section */}
+      <Box sx={{ py: 8 }}>
+        <Container>
+          <Typography
+            variant="h4"
+            component="h2"
+            align="center"
+            gutterBottom
+            sx={{ mb: 6, color: 'text.primary' }}
+          >
+            Share Your Experience
+          </Typography>
+          <Comments />
         </Container>
       </Box>
 

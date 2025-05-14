@@ -34,7 +34,7 @@ const Footer = () => {
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
               <PhoneIcon sx={{ mr: 1, color: 'text.primary' }} />
-              <Typography color="text.primary">+91 8948756090, 7236943125 </Typography>
+              <Typography color="text.primary">+91 7236943125 </Typography>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
               <EmailIcon sx={{ mr: 1, color: 'text.primary' }} />

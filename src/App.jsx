@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { GoogleOAuthProvider } from '@react-oauth/google';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Appointment from './pages/Appointment';
@@ -128,36 +127,34 @@ const theme = createTheme({
 
 function App() {
   return (
-    <GoogleOAuthProvider clientId="204214736475-0jerra54011lfi8q7jhvdqi1k58pi7nh.apps.googleusercontent.com">
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Box sx={{ 
-          width: '100%',
-          overflowX: 'hidden',
-          position: 'relative',
-        }}>
-          <Router>
-            <AuthProvider>
-              <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-                <Navbar />
-                <Box component="main" sx={{ 
-                  flexGrow: 1,
-                  width: '100%',
-                  overflowX: 'hidden',
-                }}>
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/appointment" element={<Appointment />} />
-                  </Routes>
-                </Box>
-                <Footer />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Box sx={{ 
+        width: '100%',
+        overflowX: 'hidden',
+        position: 'relative',
+      }}>
+        <Router>
+          <AuthProvider>
+            <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+              <Navbar />
+              <Box component="main" sx={{ 
+                flexGrow: 1,
+                width: '100%',
+                overflowX: 'hidden',
+              }}>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/appointment" element={<Appointment />} />
+                </Routes>
               </Box>
-            </AuthProvider>
-          </Router>
-        </Box>
-      </ThemeProvider>
-    </GoogleOAuthProvider>
+              <Footer />
+            </Box>
+          </AuthProvider>
+        </Router>
+      </Box>
+    </ThemeProvider>
   );
 }
 

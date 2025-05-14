@@ -1,6 +1,12 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { jwtDecode } from 'jwt-decode';
+import { 
+  GoogleAuthProvider, 
+  signInWithPopup, 
+  signOut as firebaseSignOut,
+  onAuthStateChanged 
+} from 'firebase/auth';
+import { auth } from '../firebase/config';
 
 const AuthContext = createContext();
 
@@ -9,35 +15,48 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser({
+          uid: user.uid,
+          name: user.displayName,
+          email: user.email,
+          picture: user.photoURL,
+        });
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe();
   }, []);
 
-  const login = (credentialResponse) => {
+  const login = async () => {
     try {
-      const userData = jwtDecode(credentialResponse.credential);
-      const user = {
-        name: userData.name,
-        email: userData.email,
-        picture: userData.picture,
-      };
-      setUser(user);
-      localStorage.setItem('user', JSON.stringify(user));
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      setUser({
+        uid: user.uid,
+        name: user.displayName,
+        email: user.email,
+        picture: user.photoURL,
+      });
       navigate('/');
     } catch (error) {
       console.error('Login error:', error);
+      throw error;
     }
   };
 
-  const logout = () => {
+  const logout = async () => {
     try {
+      await firebaseSignOut(auth);
       setUser(null);
-      localStorage.removeItem('user');
       navigate('/login');
     } catch (error) {
       console.error('Logout error:', error);
+      throw error;
     }
   };
 
