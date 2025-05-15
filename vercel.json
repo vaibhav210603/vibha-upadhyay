@@ -19,14 +19,11 @@
       "dest": "server.js"
     },
     {
-      "src": "/(.*)",
-      "dest": "/dist/$1"
-    }
-  ],
-  "rewrites": [
+      "handle": "filesystem"
+    },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ],
   "headers": [
