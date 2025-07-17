@@ -338,7 +338,7 @@ const Home = () => {
                   About Vibha Upadhyay
                 </Typography>
                 <Typography variant="body1" paragraph color="text.primary">
-                  With years of experience in numerology and astrology, Vibha Upadhyay
+                  With years of experience in numerology and Vastu, Vibha Upadhyay
                   helps individuals discover their true potential and navigate life's
                   challenges through ancient wisdom and modern insights.
                 </Typography>
