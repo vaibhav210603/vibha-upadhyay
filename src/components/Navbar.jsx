@@ -120,7 +120,7 @@ const Navbar = () => {
           }}
         >
           <Typography
-            variant="h5"
+            variant="h3"
             component={RouterLink}
             to="/"
             sx={{ 

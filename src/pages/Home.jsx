@@ -153,11 +153,11 @@ const Home = () => {
             transition={{ duration: 1 }}
           >
             <Typography
-              variant="h2"
+              variant="h1"
               component="h1"
               gutterBottom
               sx={{
-                fontWeight: 700,
+                fontWeight: 900,
                 color: videoEnded ? 'black' : 'white',
                 textShadow: videoEnded ? 'none' : '2px 2px 4px rgba(0,0,0,0.5)',
                 transition: 'all 1s ease-in-out',
@@ -166,7 +166,7 @@ const Home = () => {
               Welcome to Vibha Upadhyay's World
             </Typography>
             <Typography
-              variant="h5"
+              variant="h3"
               gutterBottom
               sx={{
                 mb: 4,
@@ -199,7 +199,7 @@ const Home = () => {
       {/* Services Section */}
       <Container sx={{ py: 8 }}>
         <Typography
-          variant="h4"
+          variant="h1"
           component="h2"
           align="center"
           gutterBottom
@@ -232,7 +232,7 @@ const Home = () => {
                     <Typography variant="h1" sx={{ mb: 2 }}>
                       {service.icon}
                     </Typography>
-                    <Typography variant="h5" component="h3" gutterBottom color="text.primary">
+                    <Typography variant="h3" component="h3" gutterBottom color="text.primary">
                       {service.title}
                     </Typography>
                     <Typography variant="body1" color="text.secondary">
@@ -247,10 +247,10 @@ const Home = () => {
       </Container>
 
       {/* Testimonials Section */}
-      <Box sx={{ bgcolor: 'primary.main', py: 8 }}>
+      <Box sx={{ bgcolor: 'white', py: 8 }}>
         <Container>
           <Typography
-            variant="h4"
+            variant="h1"
             component="h2"
             align="center"
             gutterBottom
@@ -302,7 +302,7 @@ const Home = () => {
       <Box sx={{ py: 8 }}>
         <Container>
           <Typography
-            variant="h4"
+            variant="h1"
             component="h2"
             align="center"
             gutterBottom
@@ -315,7 +315,7 @@ const Home = () => {
       </Box>
 
       {/* About Section */}
-      <Box sx={{ bgcolor: 'primary.main', color: 'text.primary', py: 8 }}>
+      <Box sx={{ bgcolor: 'white', color: 'text.primary', py: 8 }}>
         <Container>
           <Grid container spacing={4} alignItems="center">
             <Grid item xs={12} md={6}>
@@ -324,7 +324,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <Typography variant="h4" gutterBottom color="text.primary">
+                <Typography variant="h1" gutterBottom color="text.primary">
                   About Vibha Upadhyay
                 </Typography>
                 <Typography variant="body1" paragraph color="text.primary">
@@ -344,23 +344,23 @@ const Home = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <Slider {...sliderSettings}>
-                  {photos.map((photo, index) => (
-                    <Box key={index} sx={{ p: 2 }}>
-                      <Box
-                        component="img"
-                        src={photo}
-                        alt={`Photo ${index + 1}`}
-                        sx={{
-                          width: '100%',
-                          height: '400px',
-                          objectFit: 'cover',
-                          borderRadius: 2,
-                        }}
-                      />
-                    </Box>
-                  ))}
-                </Slider>
+              <Box sx={{ p: 2 }}>
+            <Box
+              component="video"
+              src="/videos/mummy_ai.mp4"
+              controls
+              autoPlay
+              loop
+              muted
+              sx={{
+                width: '100%',
+                height: '500px',
+                objectFit:'cover',
+                borderRadius: 2,
+              }}
+            />
+          </Box>
+
               </motion.div>
             </Grid>
           </Grid>

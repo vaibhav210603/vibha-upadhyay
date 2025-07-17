@@ -31,15 +31,17 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Poppins", "Roboto", sans-serif',
+    fontFamily: '"Dosis", sans-serif',
     h1: {
+      fontFamily: '"Lobster Two", cursive',
       fontWeight: 700,
       fontSize: '2.5rem',
       '@media (min-width:600px)': {
-        fontSize: '3.5rem',
+        fontSize: '4rem',
       },
     },
     h2: {
+      fontFamily: '"Lobster Two", cursive',
       fontWeight: 600,
       fontSize: '2rem',
       '@media (min-width:600px)': {
@@ -47,17 +49,28 @@ const theme = createTheme({
       },
     },
     h3: {
-      fontWeight: 600,
+      fontFamily: '"Lobster Two", cursive',
+      fontWeight: 400,
       fontSize: '1.75rem',
       '@media (min-width:600px)': {
         fontSize: '2rem',
       },
     },
     body1: {
+      fontFamily: '"Dosis", sans-serif',
       fontSize: '1rem',
       '@media (min-width:600px)': {
         fontSize: '1.1rem',
       },
+    },
+    body2: {
+      fontFamily: '"Dosis", sans-serif',
+    },
+    subtitle1: {
+      fontFamily: '"Dosis", sans-serif',
+    },
+    subtitle2: {
+      fontFamily: '"Dosis", sans-serif',
     },
   },
   components: {
