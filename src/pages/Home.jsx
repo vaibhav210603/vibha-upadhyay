@@ -54,9 +54,19 @@ const Home = () => {
       icon: '🔮',
     },
     {
-      title: 'Remedies to Problems',
+      title: 'Career and finance prediction',
       description: 'Personalized solutions and remedies to overcome life challenges and obstacles.',
       icon: '✨',
+    },
+    {
+      title: 'Love and career prediction',
+      description: 'Personalized solutions and remedies to overcome life challenges and obstacles.',
+      icon: '💕',
+    },
+    {
+      title: 'Future Health prediction ',
+      description: 'Personalized solutions and remedies to overcome life challenges and obstacles.',
+      icon: '🍏',
     },
   ];
 
@@ -163,7 +173,7 @@ const Home = () => {
                 transition: 'all 1s ease-in-out',
               }}
             >
-              Welcome to Vibha Upadhyay's World
+               Vibha Upadhyay
             </Typography>
             <Typography
               variant="h3"
@@ -175,7 +185,7 @@ const Home = () => {
                 transition: 'all 1s ease-in-out',
               }}
             >
-              Expert in Numerology and Astrology
+              Expert in Numerology and Vastu
             </Typography>
             <Button
               component={RouterLink}
@@ -183,10 +193,10 @@ const Home = () => {
               variant="contained"
               size="large"
               sx={{
-                background: 'linear-gradient(45deg, #7B1FA2 30%, #AE52D4 90%)',
+                background: 'linear-gradient(45deg,rgb(233, 174, 24) 30%,rgb(247, 205, 22) 90%)',
                 color: 'white',
                 '&:hover': {
-                  background: 'linear-gradient(45deg, #4A0072 30%, #7B1FA2 90%)',
+                  background: 'linear-gradient(45deg,rgb(226, 189, 21) 30%, rgb(226, 189, 21) 90%)',
                 },
               }}
             >
